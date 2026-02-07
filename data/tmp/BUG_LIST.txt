@@ -1,0 +1,43 @@
+(1) 原有 ATU-CAMERA 的 KIVY ~ 用於  i.MX93 將導致 CPU 跑滿無法順利操作 且開啟鏡頭的連接有問題 ? (原因不明)
+    如下 : [ WARN:0@4.980] global /usr/src/debug/opencv/4.6.0.imx-r0/modules/videoio/src/cap_gstreamer.cpp (1405) open OpenCV | GStreamer warning: Cannot query video position: status=0, value=-1, duration=-1
+
+(2) 一樣框架改成 GTK 的 GUI 圖形介面，遇到 OpenCV Buffer 轉換至 Gstreamer 的問題, 已順利轉換 但速度過慢，代碼紀錄如下
+    def draw_cb(self, widget, context):
+        
+        """Draw the frame in the GUI."""
+        if self.sample is None:
+            context.set_source_rgb(0,0,0)
+            context.paint()
+            return
+            
+        # Get frame details
+        buffer = self.sample.get_buffer()
+        height = self.sample.get_caps().get_structure(0).get_value("height")
+        width  = self.sample.get_caps().get_structure(0).get_value("width")
+
+        if(0) :
+            # OpenCV BGR888 to RGB565
+            im = self.frame_AI
+            R5 = (im[...,2]>>3).astype(np.uint16) << 11
+            G6 = (im[...,1]>>2).astype(np.uint16) << 5
+            B5 = (im[...,0]>>3).astype(np.uint16)
+            RGB565 = R5 | G6 | B5
+
+            # OpenCV Buffer to Gstreamer Buffer
+            bytebuffer = RGB565.tobytes()
+            buffer = Gst.Buffer.new_wrapped_full(Gst.MemoryFlags.READONLY, bytebuffer, len(bytebuffer), 0, None, None)
+        
+        # Read Gstreamer Buffer
+        ret, mem_buf = buffer.map(Gst.MapFlags.READ)
+
+        # While GStreamer provides a buffer, it is read only even if write
+        frame = np.ndarray(shape=(height,width), dtype=np.uint16, buffer=mem_buf.data).copy()
+        surface = cairo.ImageSurface.create_for_data(frame, cairo.Format.RGB16_565, width, height)
+        context.set_source_surface(surface)
+        context.paint()
+
+        # Clean up
+        buffer.unmap(mem_buf)
+        #GLib.idle_add(self.fps_label.set_text, "Video FPS: " + str(round(1/(time.monotonic() - video_time),2)))
+
+(3) 使用 MODEL 

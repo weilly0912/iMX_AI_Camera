@@ -1,0 +1,88 @@
+window {
+    color: rgba(1,1,1,0.5);
+    background-color: rgba(0,0,0,0.7);
+}
+
+label {
+    color: #ffffff;
+    font-size:12px;
+}
+
+.header_AI {
+    background-color: rgba(1,1,1,0.5);
+}
+
+button {
+    color: white;
+    background-color: rgba(0,0,0,0.75);
+    background-image:none;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+    min-width: 15px; /*OP-Gpyo*/
+    min-height: 7px;  /*OP-Gpyo*/
+}
+
+.Button-action {
+    color: white;
+    background-color: MidnightBlue;
+    background-image:none;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+    min-width: 15px;  /*OP-Gpyo*/
+    min-height: 7px;  /*OP-Gpyo*/
+}
+
+.Button-action-stop {
+    color: white;
+    background-color: LightSlateGray;
+    background-image:none;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.Button-quit{
+    color: white;
+    background-color: black;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.Button-settingISP {
+    color: white;
+    background-color: black;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.Button-debugMsg {
+    color: white;
+    background-color: black;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.Button-saveImg {
+    color: white;
+    background-color: black;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.Button-specialFunc{
+    color: white;
+    background-color: black;
+    border-radius: 14px;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.OptionsBox-ISP {
+    color: rgba(0,0,0,0.75);
+}

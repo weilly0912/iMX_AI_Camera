@@ -1,0 +1,8 @@
+0  None
+1  Apple
+2  Banana
+3  Strawberry
+4  Orange
+5  Pear
+6  Pineapple
+7  Watermelon
