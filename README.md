@@ -15,7 +15,6 @@ i.MX Camera GTK is a comprehensive AI camera demo application designed for NXP i
 - **i.MX8MP** (BSP 5.15.x / L6.1.55)
 - **i.MX93** (BSP 5.15.x)
 - **i.MX95** (BSP L6.1.55)
-- **RK3588**
 
 ## Features
 
@@ -353,4 +352,5 @@ For issues and questions, please refer to:
 ---
 
 **Note:** This application is designed for embedded Linux environments on NXP iMX platforms. Some features may not work on standard desktop Linux distributions without appropriate hardware and drivers.
+
 
