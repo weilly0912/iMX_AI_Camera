@@ -1,10 +1,10 @@
-# ATU Camera GTK - AI Camera Application for NXP iMX Platforms
+# i.MX Camera GTK - AI Camera Application for NXP iMX Platforms
 
 An AI-powered camera application with GTK3 GUI for NXP iMX embedded platforms. This application provides real-time AI inference capabilities including object detection, segmentation, face recognition, pose estimation, and more.
 
 ## Overview
 
-ATU Camera GTK is a comprehensive AI camera demo application designed for NXP iMX platforms. It features a modern GTK3-based graphical interface and supports various TensorFlow Lite models optimized for edge AI inference.
+i.MX Camera GTK is a comprehensive AI camera demo application designed for NXP iMX platforms. It features a modern GTK3-based graphical interface and supports various TensorFlow Lite models optimized for edge AI inference.
 
 **Version:** 10.0  
 **Last Updated:** 2025/02/06  
@@ -99,10 +99,10 @@ pip3 install https://github.com/google-coral/pycoral/releases/download/v2.0.0/tf
 ```bash
 # If using git
 git clone <repository-url>
-cd ATU-Camera-GTK
+cd iMX_AI_Camera
 
 # Or extract the project files to your target directory
-# Recommended location: /home/root/ATU-Camera-GTK
+# Recommended location: /home/root/iMX_AI_Camera
 ```
 
 ### 3. Set Permissions
@@ -213,7 +213,7 @@ nohup ./run.sh &
 If a compiled binary (`demo.bin`) is available:
 
 ```bash
-/home/root/ATU-Camera-GTK/run/demo.bin -c 1 -cf "image/jpeg, width=1280,height=720, framerate=30/1 ! jpegdec ! videoconvert !" -wm 1
+/home/root/iMX_AI_Camera/run/demo.bin -c 1 -cf "image/jpeg, width=1280,height=720, framerate=30/1 ! jpegdec ! videoconvert !" -wm 1
 ```
 
 ## Camera Device Configuration
@@ -302,7 +302,7 @@ export GDK_BACKEND=wayland  # or x11 depending on your system
 ## File Structure
 
 ```
-ATU-Camera-GTK/
+iMX_AI_Camera/
 ├── data/
 │   ├── model/          # AI model files (.tflite, .nb)
 │   ├── label/          # Label files for models
@@ -353,3 +353,4 @@ For issues and questions, please refer to:
 ---
 
 **Note:** This application is designed for embedded Linux environments on NXP iMX platforms. Some features may not work on standard desktop Linux distributions without appropriate hardware and drivers.
+
